@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../assets/image/login.svg"
 import { useContext } from "react";
 import { AuthContext } from "../UserAuth/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
            
@@ -17,18 +19,20 @@ const SignIn = () => {
         logIn(email,password)
         .then(result=>{
             console.log(result.user);
+            toast("user created successfully")
             navigate(location.state? location.state:"/")
         })
-        .catch(error=>console.log(error.message))
+        .catch(error=>toast(error.message))
 
     }
     const handlegoogle=()=>{
         googleSignIn()
         .then(result=>{
             console.log(result.user);
+            toast("user created successfully")
             navigate(location.state? location.state:"/")
         })
-        .catch(error=>console.log(error.message))
+        .catch(error=>toast(error.message))
     }
             return (
                 <div >
@@ -55,6 +59,7 @@ const SignIn = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
                 </div>
             );
         };
