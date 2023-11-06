@@ -6,6 +6,7 @@ import axios from "axios";
 const AddFood = () => {
     const{user}=useContext(AuthContext);
     const {displayName,photoURL,email}=user
+    console.log(displayName,photoURL,email);
     const handleAddFood=e=>{
         e.preventDefault();
         const form=e.target

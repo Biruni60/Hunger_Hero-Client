@@ -15,7 +15,7 @@ const Navbar = () => {
         <li className="mr-4 "><NavLink to="/addfood">ADD FOOD</NavLink></li>
         <li className="mr-4 "><NavLink to="/managemyfoods">MANAGE MY FOODS</NavLink></li>
         <li className="mr-4 "><NavLink to="/myfoodrequest">MY FOOD REQUEST</NavLink></li>
-       {user?<button onClick={handleSignOut} className="mr-4">SIGN OUT</button>: <li className="mr-4 "><NavLink to="/signin">SIGN IN</NavLink></li>}
+       {user?<button onClick={handleSignOut} className="mx-3">SIGN OUT</button>: <li className="mr-4 "><NavLink to="/signin">SIGN IN</NavLink></li>}
     </>
     return (
         <div className="navbar flex pr-10 lg:p-2 justify-between items-center pt-2 lg:py-10">

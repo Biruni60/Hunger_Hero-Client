@@ -10,6 +10,7 @@ import MyFoodRequest from "../NavComponent/Components/MyFoodRequest/MyFoodReques
 import AddFood from "../NavComponent/Components/Add Food/AddFood";
 import SignIn from "../UserAuth/SignIn";
 import SignUp from "../UserAuth/SignUp";
+import PrivateRoute from "../Private Route/Private Route";
 
   const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ import SignUp from "../UserAuth/SignUp";
         },
         {
             path:"/addfood",
-            element:<AddFood></AddFood>
+            element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
         },
         {
             path:"/managemyfoods",
