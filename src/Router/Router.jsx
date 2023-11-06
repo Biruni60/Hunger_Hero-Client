@@ -24,7 +24,8 @@ import PrivateRoute from "../Private Route/Private Route";
         },
         {
             path:"/availablefoods",
-            element:<AvailableFoods></AvailableFoods>
+            element:<AvailableFoods></AvailableFoods>,
+            loader:()=>fetch("http://localhost:5000/availablefoods")
         },
         {
             path:"/addfood",

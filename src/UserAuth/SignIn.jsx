@@ -43,9 +43,9 @@ const SignIn = () => {
             <h2 className="text-center text-3xl font-semibold text-white">Log In Now</h2>
               <form onSubmit={handleLogIn} className="space-y-4">
                 <p className="text-white text-xl">Email</p>
-                 <input type="email" name="email"  className="input input-bordered input-error w-full" />
+                 <input type="email" required name="email"  className="input input-bordered input-error w-full" />
                  <p className="text-white text-xl">Password</p>
-                 <input type="password" name="password"  className="input input-bordered input-error w-full" />
+                 <input type="password" required name="password"  className="input input-bordered input-error w-full" />
                  <input type="submit" value="Login" className="btn btn-outline text-white w-full"/>
               </form>
                <p className="text-white">Also Login with,</p>

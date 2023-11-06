@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../../UserAuth/AuthProvider";
 import axios from "axios";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddFood = () => {
     const{user}=useContext(AuthContext);
     const {displayName,photoURL,email}=user
-    console.log(displayName,photoURL,email);
+
     const handleAddFood=e=>{
         e.preventDefault();
         const form=e.target
@@ -19,7 +21,11 @@ const AddFood = () => {
         form.reset()
         const food={name,image,quantity,location,expireDate,note,status:"Available",displayName,photoURL,email}
         axios.post('http://localhost:5000/addfood',food)
-        .then(res=>console.log(res))
+        .then(res=>{
+            if(res.data.insertedId){
+                toast("food added successfully")
+            }
+        })
     }
     return (
         <div>
@@ -47,6 +53,7 @@ const AddFood = () => {
              
             </form>
          </div> 
+         <ToastContainer />
         </div>
     );
 };
