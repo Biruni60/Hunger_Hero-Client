@@ -1,13 +1,15 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AvailableFood from "./AvailableFood";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 
 const AvailableFoods = () => {
     const loadedFoods=useLoaderData()
     const [availableFoods,setAvailableFoods]=useState(loadedFoods)
-  
+    
 
 
     const handleSearch=(e)=>{
@@ -23,12 +25,16 @@ const AvailableFoods = () => {
      setAvailableFoods([remaining])
     }
      else{
-        toast("not found")
+        toast("Item not found")
     }
 
 }
     const handleSort=()=>{
-
+    axios.get('http://localhost:5000/availablefoods/sorted')
+    .then(res=>{
+        setAvailableFoods(res.data)
+        toast("Foods Sorted By Expire Date")
+    })
     }
     return (
         <div>
@@ -55,6 +61,7 @@ const AvailableFoods = () => {
                 availableFoods.map(availableFood=><AvailableFood key={availableFood._id} availableFood={availableFood}></AvailableFood>)
             }
            </div>
+           <ToastContainer />
         </div>
     );
 };
