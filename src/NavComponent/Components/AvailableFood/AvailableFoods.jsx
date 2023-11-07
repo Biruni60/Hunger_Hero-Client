@@ -27,7 +27,6 @@ const AvailableFoods = () => {
      else{
         toast("Item not found")
     }
-
 }
     const handleSort=()=>{
     axios.get('http://localhost:5000/availablefoods/sorted')

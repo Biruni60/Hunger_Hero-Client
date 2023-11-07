@@ -11,6 +11,7 @@ import AddFood from "../NavComponent/Components/Add Food/AddFood";
 import SignIn from "../UserAuth/SignIn";
 import SignUp from "../UserAuth/SignUp";
 import PrivateRoute from "../Private Route/Private Route";
+import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoodDetail/SingleFoodDetail";
 
   const router = createBrowserRouter([
     {
@@ -47,6 +48,11 @@ import PrivateRoute from "../Private Route/Private Route";
             path:"/signup",
             element:<SignUp></SignUp>
         },
+        {
+          path:"/singleFoodDetail/:id",
+          element:<SingleFoodDetail></SingleFoodDetail>,
+          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+        }
       ]
     },
   ]);
