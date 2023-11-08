@@ -7,7 +7,7 @@ const MyFoodDetail = ({food,setFoods,foods}) => {
     if(status==="Delivered"){
       return toast("Already delivered.Cant Cancel")
     }
-    axios.delete(`http://localhost:5000/cancel/${id}`)
+    axios.delete(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /cancel/${id}`)
     .then(res=>{
         if(res.status===200){
         

@@ -18,7 +18,7 @@ const ManageMyFood = ({food,foods,setFoods}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete/${id}`)
+                axios.delete(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /delete/${id}`)
                 .then(res=>{
                     if(res.status===200){
                     {

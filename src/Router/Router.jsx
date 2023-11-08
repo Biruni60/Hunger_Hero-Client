@@ -24,12 +24,12 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/availablefoods/sorted2')
+            loader:()=>fetch('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods/sorted2')
         },
         {
             path:"/availablefoods",
             element:<AvailableFoods></AvailableFoods>,
-            loader:()=>fetch("http://localhost:5000/availablefoods")
+            loader:()=>fetch("https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods")
         },
         {
             path:"/addfood",
@@ -55,12 +55,12 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         {
           path:"/singleFoodDetail/:id",
           element:<PrivateRoute><SingleFoodDetail></SingleFoodDetail></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+          loader:({params})=>fetch(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /singleFoodDetail/${params.id}`)
         },
         {
           path:"/updatefoods/:id",
           element:<UpdateFood></UpdateFood>,
-          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+          loader:({params})=>fetch(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /singleFoodDetail/${params.id}`)
         },
         {
           path:"/managefoods/:id",

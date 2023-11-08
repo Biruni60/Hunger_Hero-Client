@@ -29,7 +29,7 @@ const AvailableFoods = () => {
     }
 }
     const handleSort=()=>{
-    axios.get('http://localhost:5000/availablefoods/sorted')
+    axios.get('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods/sorted')
     .then(res=>{
         setAvailableFoods(res.data)
         toast("Foods Sorted By Expire Date")
@@ -57,7 +57,7 @@ const AvailableFoods = () => {
            <h2 className="text-4xl text-center font-semibold text-orange-600 my-10 md:my-16">Avaiable Foods</h2>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
             {
-                availableFoods&&availableFoods.map(availableFood=><AvailableFood key={availableFood._id} availableFood={availableFood}></AvailableFood>)
+                availableFoods.map(availableFood=><AvailableFood key={availableFood._id} availableFood={availableFood}></AvailableFood>)
             }
            </div>
            <ToastContainer />

@@ -42,13 +42,13 @@ const AuthProvider = ({children}) => {
         setLoading(false)
         if(currentUser){
             
-            axios.post("http://localhost:5000/jwt",loggedUser,{withCredentials:true})
+            axios.post("https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /jwt",loggedUser,{withCredentials:true})
             .then(res=>{
               console.log(res.data);
             })
         }
         else{
-            axios.post("http://localhost:5000/logout",loggedUser,{withCredentials:true})
+            axios.post("https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /logout",loggedUser,{withCredentials:true})
             .then(res=>{
              console.log("token response",res.data);
             }) 

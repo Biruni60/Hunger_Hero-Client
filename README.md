@@ -1,8 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Website Name:HUNGERHEROS
+live link:https://donate-now-7ccde.firebaseapp.com/
+server link:https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app
+features:
+1.can see avaiable food.
+2.user can donate food.
+3 user can request for food.
+4.user can search food from available food
+5.user can sort data from available food

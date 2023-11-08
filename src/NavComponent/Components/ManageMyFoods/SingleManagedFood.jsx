@@ -8,7 +8,7 @@ const SingleManagedFood = () => {
     const [food,setFood]=useState(null)
     
     useEffect(()=>{
-   axios.get(`http://localhost:5000/manage/${id}`)
+   axios.get(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /manage/${id}`)
    .then(res=>{
     if(res.data){
         setFood(res.data)
@@ -16,10 +16,10 @@ const SingleManagedFood = () => {
    })
     },[id])
     const handleDeliver=id=>{
-        axios.put(`http://localhost:5000/status/${id}`)
+        axios.put(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /status/${id}`)
         .then(res=>{
             if(res.status===200){
-               axios.delete(`http://localhost:5000/delete/${id}`)
+               axios.delete(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /delete/${id}`)
                .then(res=>{
                 if(res.status===200){
                     toast("food is delivered")

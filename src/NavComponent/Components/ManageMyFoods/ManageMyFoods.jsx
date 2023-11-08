@@ -6,7 +6,7 @@ import ManageMyFood from "./ManageMyFood";
 const ManageMyFoods = () => {
     const{user}=useContext(AuthContext)
     const [foods,setFoods]=useState([])
-    const url=`http://localhost:5000/managefoods?email=${user?.email}`
+    const url=`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /managefoods?email=${user?.email}`
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
         .then(res=>setFoods(res.data))
@@ -40,7 +40,7 @@ const ManageMyFoods = () => {
     </thead>
     <tbody>
      {
-        foods && foods.map(food=><ManageMyFood key={food._id} food={food} foods={foods} setFoods={setFoods}></ManageMyFood>)
+     foods.map(food=><ManageMyFood key={food._id} food={food} foods={foods} setFoods={setFoods}></ManageMyFood>)
      }
     </tbody>
     

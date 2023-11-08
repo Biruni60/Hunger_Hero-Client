@@ -20,7 +20,7 @@ const AddFood = () => {
         const note =form.note.value
         form.reset()
         const food={name,image,quantity,location,expireDate,note,status:"Available",displayName,photoURL,email}
-        axios.post('http://localhost:5000/addfood',food)
+        axios.post('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /addfood',food)
         .then(res=>{
             if(res.data.insertedId){
                 toast("food added successfully")
