@@ -21,7 +21,8 @@ import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoo
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('http://localhost:5000/availablefoods/sorted2')
         },
         {
             path:"/availablefoods",
@@ -50,7 +51,7 @@ import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoo
         },
         {
           path:"/singleFoodDetail/:id",
-          element:<SingleFoodDetail></SingleFoodDetail>,
+          element:<PrivateRoute><SingleFoodDetail></SingleFoodDetail></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
         }
       ]
