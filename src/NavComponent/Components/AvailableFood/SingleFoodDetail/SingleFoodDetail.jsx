@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../UserAuth/AuthProvider";
 import axios from "axios";
@@ -6,23 +6,38 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SingleFoodDetail = () => {
-    const {name,image,quantity,expireDate,location,email,displayName}=useLoaderData()
+    const {_id,name,image,quantity,expireDate,location,email,displayName}=useLoaderData()
     const {user}=useContext(AuthContext)
+    const [foods,setFoods]=useState([])
+    useEffect(()=>{
+      axios.get('http://localhost:5000/requestfood')
+      .then(res=>setFoods(res.data))
+    },[])
+
     const handleRequest=(e)=>{
        e.preventDefault()
        const requestNote=e.target.requestNote.value 
        const donation=e.target.donation.value 
-       console.log(requestNote,donation);
        const currentDate = new Date().toLocaleDateString();
        
-       const food={name,image,donatorEmail:email,donatorName:displayName,requestEmail:user.email,requestDate:currentDate,location,expireDate,requestNote,donation}
-       axios.post('http://localhost:5000/requestfood',food)
+       const food={_id,name,image,donatorEmail:email,donatorName:displayName,requestEmail:user.email,requestDate:currentDate,location,expireDate,requestNote,donation,requestName:user.displayName,requestImage:user.photoUrl}
+       const id=foods.find(foo=>{
+        console.log(_id,foo._id);
+        return foo._id===_id
+       })
+       if(id){
+        toast("already added")
+       }
+       else{
+      
+         axios.post('http://localhost:5000/requestfood',food)
        .then(res=>{
         console.log(res.data);
         if(res.data.insertedId){
-            toast("Request Successfull")
+             toast("Request Successfull")
         }
-       })
+        })
+       }
     }
     return (
         <div>
