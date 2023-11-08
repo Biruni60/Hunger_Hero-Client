@@ -13,6 +13,7 @@ import SignUp from "../UserAuth/SignUp";
 import PrivateRoute from "../Private Route/Private Route";
 import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoodDetail/SingleFoodDetail";
 import UpdateFood from "../NavComponent/Components/ManageMyFoods/UpdateFood";
+import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleManagedFood";
 
   const router = createBrowserRouter([
     {
@@ -56,8 +57,13 @@ import UpdateFood from "../NavComponent/Components/ManageMyFoods/UpdateFood";
           loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
         },
         {
-          path:"/updatefood/:id",
+          path:"/updatefoods/:id",
           element:<UpdateFood></UpdateFood>,
+          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+        },
+        {
+          path:"/managefoods/:id",
+          element:<SingleManagedFood></SingleManagedFood>,
           loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
         }
       ]

@@ -15,7 +15,8 @@ const ManageMyFoods = () => {
     
     return (
         <div>
-            <div >
+            <div className="my-10">
+            <h2 className="text-3xl my-6 text-center">Your Added Products</h2>
   <table  className=" max-w-screen-sm md:max-w-3xl md:mx-auto overflow-hidden">
     {/* head */}
     <thead>

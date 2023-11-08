@@ -54,10 +54,10 @@ const ManageMyFood = ({food,foods,setFoods}) => {
         </td>
         <td>{expireDate}</td>
         <td>
-        <Link to={`/updatefood/${_id}`}>  <button className='btn btn-sm btn-outline text-orange-600'>Edit</button></Link>
+        <Link to={`/updatefoods/${_id}`}>  <button className='btn btn-sm btn-outline text-orange-600'>Edit</button></Link>
         </td>
         <td>
-            <button  className='btn btn-sm btn-outline text-orange-600'>Manage</button>
+            <Link to={`/managefoods/${_id}`}><button  className='btn btn-sm btn-outline text-orange-600'>Manage</button></Link>
         </td>
       </tr>
     );
