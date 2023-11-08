@@ -57,7 +57,7 @@ const AvailableFoods = () => {
            <h2 className="text-4xl text-center font-semibold text-orange-600 my-10 md:my-16">Avaiable Foods</h2>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
             {
-                availableFoods.map(availableFood=><AvailableFood key={availableFood._id} availableFood={availableFood}></AvailableFood>)
+                availableFoods&&availableFoods.map(availableFood=><AvailableFood key={availableFood._id} availableFood={availableFood}></AvailableFood>)
             }
            </div>
            <ToastContainer />

@@ -12,6 +12,7 @@ import SignIn from "../UserAuth/SignIn";
 import SignUp from "../UserAuth/SignUp";
 import PrivateRoute from "../Private Route/Private Route";
 import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoodDetail/SingleFoodDetail";
+import UpdateFood from "../NavComponent/Components/ManageMyFoods/UpdateFood";
 
   const router = createBrowserRouter([
     {
@@ -52,6 +53,11 @@ import SingleFoodDetail from "../NavComponent/Components/AvailableFood/SingleFoo
         {
           path:"/singleFoodDetail/:id",
           element:<PrivateRoute><SingleFoodDetail></SingleFoodDetail></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+        },
+        {
+          path:"/updatefood/:id",
+          element:<UpdateFood></UpdateFood>,
           loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
         }
       ]

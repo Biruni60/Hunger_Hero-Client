@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types"
 
 const FeaturedFoodDetails = ({food}) => {
     const {_id,name,image,displayName,photoURL,quantity,location,expireDate,note}=food
@@ -21,5 +21,7 @@ const FeaturedFoodDetails = ({food}) => {
         </div>
     );
 };
-
+FeaturedFoodDetails.propTypes={
+    food:PropTypes.object
+}
 export default FeaturedFoodDetails;

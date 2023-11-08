@@ -20,7 +20,7 @@ const SingleFoodDetail = () => {
        const donation=e.target.donation.value 
        const currentDate = new Date().toLocaleDateString();
        
-       const food={_id,name,image,donatorEmail:email,donatorName:displayName,requestEmail:user.email,requestDate:currentDate,location,expireDate,requestNote,donation,requestName:user.displayName,requestImage:user.photoUrl}
+       const food={_id,name,image,donatorEmail:email,donatorName:displayName,requestEmail:user.email,requestDate:currentDate,location,expireDate,requestNote,donation,requestName:user.displayName,requestImage:user.photoUrl,status:"Available"}
        const id=foods.find(foo=>{
         console.log(_id,foo._id);
         return foo._id===_id
