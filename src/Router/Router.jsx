@@ -41,7 +41,7 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         },
         {
             path:"/myfoodrequest",
-            element:<MyFoodRequest></MyFoodRequest>,
+            element:<PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>,
       
         },
         {

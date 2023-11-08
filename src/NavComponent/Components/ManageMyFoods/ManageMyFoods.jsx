@@ -8,7 +8,7 @@ const ManageMyFoods = () => {
     const [foods,setFoods]=useState([])
     const url=`http://localhost:5000/managefoods?email=${user?.email}`
     useEffect(()=>{
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
         .then(res=>setFoods(res.data))
        
     },[url])

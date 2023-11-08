@@ -11,17 +11,17 @@ const MyFoodRequest = () => {
     const [foods,setFoods]=useState([])
     const url=`http://localhost:5000/requestfoods?email=${user?.email}`
     useEffect(()=>{
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
         .then(res=>setFoods(res.data))
        
     },[url])
 
     return (
         <div>
-            <h2 className="text-3xl text-center my-6">MY REQUESTS</h2>
+            <h2 className="text-3xl text-center my-6 text-orange-600">MY REQUESTS</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
                 {
-                    foods.map(food=><MyFoodDetail key={food._id} food={food} foods={foods} setFoods={setFoods}></MyFoodDetail>)
+                    foods&&foods.map(food=><MyFoodDetail key={food._id} food={food} foods={foods} setFoods={setFoods}></MyFoodDetail>)
                 }
             </div>
         </div>
