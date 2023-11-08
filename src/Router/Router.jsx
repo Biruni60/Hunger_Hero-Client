@@ -37,11 +37,12 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         },
         {
             path:"/managemyfoods",
-            element:<ManageMyFoods></ManageMyFoods>
+            element:<PrivateRoute><ManageMyFoods></ManageMyFoods></PrivateRoute>
         },
         {
             path:"/myfoodrequest",
-            element:<MyFoodRequest></MyFoodRequest>
+            element:<MyFoodRequest></MyFoodRequest>,
+      
         },
         {
             path:"/signin",
@@ -63,8 +64,7 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         },
         {
           path:"/managefoods/:id",
-          element:<SingleManagedFood></SingleManagedFood>,
-          loader:({params})=>fetch(`http://localhost:5000/singleFoodDetail/${params.id}`)
+          element:<SingleManagedFood></SingleManagedFood>
         }
       ]
     },
