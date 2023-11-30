@@ -29,7 +29,7 @@ const AvailableFoods = () => {
     }
 }
     const handleSort=()=>{
-    axios.get('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods/sorted')
+    axios.get('https://donate-food-server.vercel.app/availablefoods/sorted',{withCredentials:true})
     .then(res=>{
         setAvailableFoods(res.data)
         toast("Foods Sorted By Expire Date")

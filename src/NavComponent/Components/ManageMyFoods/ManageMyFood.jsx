@@ -18,7 +18,7 @@ const ManageMyFood = ({food,foods,setFoods}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /delete/${id}`)
+                axios.delete(`https://donate-food-server.vercel.app/delete/${id}`,{withCredentials:true})
                 .then(res=>{
                     if(res.status===200){
                     {
@@ -65,6 +65,6 @@ const ManageMyFood = ({food,foods,setFoods}) => {
 ManageMyFood.propTypes={
     food:PropTypes.object,
     foods:PropTypes.array,
-    setFoods:PropTypes.function
+    setFoods:PropTypes.func
 }
 export default ManageMyFood;

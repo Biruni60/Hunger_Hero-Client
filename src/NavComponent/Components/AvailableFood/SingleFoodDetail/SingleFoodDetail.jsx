@@ -10,7 +10,7 @@ const SingleFoodDetail = () => {
     const {user}=useContext(AuthContext)
     const [foods,setFoods]=useState([])
     useEffect(()=>{
-      axios.get('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /requestfood')
+      axios.get('https://donate-food-server.vercel.app/requestfood',{withCredentials:true})
       .then(res=>setFoods(res.data))
     },[])
 
@@ -30,7 +30,7 @@ const SingleFoodDetail = () => {
        }
        else{
       
-         axios.post('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /requestfood',food)
+         axios.post('https://donate-food-server.vercel.app/requestfood',food,{withCredentials:true})
        .then(res=>{
         console.log(res.data);
         if(res.data.insertedId){

@@ -18,7 +18,7 @@ const UpdateFood = () => {
         const note =form.note.value
         form.reset()
         const updateFood={name,image,quantity,location,expireDate,note,status:"Available"}
-        axios.put(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /updatefood/${_id}`,updateFood)
+        axios.put(`https://donate-food-server.vercel.app/updatefood/${_id}`,updateFood,{withCredentials:true})
         .then(res=>{
             console.log(res);
             if(res.status===200){

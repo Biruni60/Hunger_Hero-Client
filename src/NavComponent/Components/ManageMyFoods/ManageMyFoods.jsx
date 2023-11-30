@@ -6,7 +6,7 @@ import ManageMyFood from "./ManageMyFood";
 const ManageMyFoods = () => {
     const{user}=useContext(AuthContext)
     const [foods,setFoods]=useState([])
-    const url=`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /managefoods?email=${user?.email}`
+    const url=`https://donate-food-server.vercel.app/managefoods?email=${user?.email}`
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
         .then(res=>setFoods(res.data))

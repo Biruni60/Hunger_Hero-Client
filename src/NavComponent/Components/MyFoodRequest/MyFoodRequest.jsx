@@ -9,7 +9,7 @@ const MyFoodRequest = () => {
     
     const{user}=useContext(AuthContext)
     const [foods,setFoods]=useState([])
-    const url=`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /requestfoods?email=${user?.email}`
+    const url=`https://donate-food-server.vercel.app/requestfoods?email=${user?.email}`
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
         .then(res=>setFoods(res.data))

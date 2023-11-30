@@ -24,13 +24,13 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=>fetch('https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods/sorted2')
+            loader:()=>fetch('https://donate-food-server.vercel.app/availablefoods/sorted2',{credentials:'include'})
         },
         {
-            path:"/availablefoods",
-            element:<AvailableFoods></AvailableFoods>,
-            loader:()=>fetch("https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /availablefoods")
-        },
+          path: "/availablefoods",
+          element: <AvailableFoods></AvailableFoods>,
+          loader: () => fetch("https://donate-food-server.vercel.app/availablefoods", { credentials: 'include' }),
+      },
         {
             path:"/addfood",
             element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
@@ -55,18 +55,18 @@ import SingleManagedFood from "../NavComponent/Components/ManageMyFoods/SingleMa
         {
           path:"/singleFoodDetail/:id",
           element:<PrivateRoute><SingleFoodDetail></SingleFoodDetail></PrivateRoute>,
-          loader:({params})=>fetch(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /singleFoodDetail/${params.id}`)
+          loader:({params})=>fetch(`https://donate-food-server.vercel.app/singleFoodDetail/${params.id}`,{credentials:"include"})
         },
         {
           path:"/updatefoods/:id",
           element:<UpdateFood></UpdateFood>,
-          loader:({params})=>fetch(`https://donate-food-server-6vb7g06zg-biru60s-projects.vercel.app /singleFoodDetail/${params.id}`)
+          loader:({params})=>fetch(`https://donate-food-server.vercel.app/singleFoodDetail/${params.id}`,{credentials:"include"})
         },
         {
           path:"/managefoods/:id",
           element:<SingleManagedFood></SingleManagedFood>
-        }
-      ]
-    },
+        },
+      ],
+    }
   ]);
   export default router;
