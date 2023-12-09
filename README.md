@@ -2,15 +2,16 @@ Website Name:HUNGERHEROS
 
 live link:https://final-donate.web.app/
 
+This is a platform where people can donate there extra food for those who is in need.Anyone can request the food which is donated by other user
 
 features:
 
-1.can see avaiable food.
+- can see avaiable food.
 
-2.user can donate food.
+- user can donate food.
 
-3 user can request for food.
+- user can request for food.
 
-4.user can search food from available food
+- user can search food from available food
 
-5.user can sort data from available food
+- user can sort data from available food
